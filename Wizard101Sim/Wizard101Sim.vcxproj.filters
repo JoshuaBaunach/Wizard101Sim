@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\helpers">
+      <UniqueIdentifier>{96d99cc0-460f-4ff4-bc56-5352ac2bfab5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\helpers">
+      <UniqueIdentifier>{d76773ca-dadf-460e-9dfa-e31ddfaeb7da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\menu">
+      <UniqueIdentifier>{75131bd5-999f-4710-be90-9717e58bc3f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\menu">
+      <UniqueIdentifier>{a21ca6d1-94fb-434d-9e77-4db234f7d94b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\spell">
+      <UniqueIdentifier>{e97e95d4-65be-492b-ba2a-98b0a438a440}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\spell">
+      <UniqueIdentifier>{0f230056-c296-4ebb-a5f3-a387bcee02ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\player">
+      <UniqueIdentifier>{f560940d-3dbc-4a9c-acd4-c698c976553e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\player">
+      <UniqueIdentifier>{8d39fac4-4ba1-49be-b9e3-048663a7fb11}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.cpp">
+      <Filter>Source Files\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="console_helper.cpp">
+      <Filter>Source Files\helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="spell_effect.cpp">
+      <Filter>Source Files\spell</Filter>
+    </ClCompile>
+    <ClCompile Include="spell.cpp">
+      <Filter>Source Files\spell</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>Source Files\player</Filter>
+    </ClCompile>
+    <ClCompile Include="constants.cpp">
+      <Filter>Source Files\helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="spell_file_parser.cpp">
+      <Filter>Source Files\spell</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="menu.h">
+      <Filter>Header Files\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="console_helper.h">
+      <Filter>Header Files\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="spell.h">
+      <Filter>Header Files\spell</Filter>
+    </ClInclude>
+    <ClInclude Include="spell_effect.h">
+      <Filter>Header Files\spell</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>Header Files\player</Filter>
+    </ClInclude>
+    <ClInclude Include="constants.h">
+      <Filter>Header Files\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="spell_file_parser.h">
+      <Filter>Header Files\spell</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
