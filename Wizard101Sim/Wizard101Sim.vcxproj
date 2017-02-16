@@ -112,6 +112,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="combat_instance.cpp" />
     <ClCompile Include="console_helper.cpp" />
     <ClCompile Include="constants.cpp" />
     <ClCompile Include="main.cpp" />
@@ -122,6 +123,7 @@
     <ClCompile Include="spell_file_parser.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="combat_instance.h" />
     <ClInclude Include="console_helper.h" />
     <ClInclude Include="constants.h" />
     <ClInclude Include="menu.h" />

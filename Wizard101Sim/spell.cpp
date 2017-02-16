@@ -24,6 +24,17 @@ void Spell::set_effects(vector<Spell_Effect> spell_effects)
 	effects = spell_effects;
 }
 
+// A bunch of getters
+string Spell::get_name() { return name; }
+string Spell::get_description() { return description; }
+int Spell::get_school() { return school; }
+int Spell::get_accuracy() { return accuracy; }
+int Spell::get_pips() { return pips; }
+int Spell::get_type() { return type; }
+int Spell::get_id() { return id; }
+bool Spell::get_shadow() { return shadow; }
+vector<Spell_Effect> Spell::get_effects() { return effects; }
+
 void Spell::print_details()
 {
 	cout << name << " (";

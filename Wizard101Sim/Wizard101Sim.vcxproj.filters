@@ -37,6 +37,12 @@
     <Filter Include="Source Files\player">
       <UniqueIdentifier>{8d39fac4-4ba1-49be-b9e3-048663a7fb11}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\combat">
+      <UniqueIdentifier>{8d7a2681-eba9-481e-b435-a1c67ee7afd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\combat">
+      <UniqueIdentifier>{23a90519-b720-4c3b-9627-22d0770f7460}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -63,6 +69,9 @@
     <ClCompile Include="spell_file_parser.cpp">
       <Filter>Source Files\spell</Filter>
     </ClCompile>
+    <ClCompile Include="combat_instance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="menu.h">
@@ -85,6 +94,9 @@
     </ClInclude>
     <ClInclude Include="spell_file_parser.h">
       <Filter>Header Files\spell</Filter>
+    </ClInclude>
+    <ClInclude Include="combat_instance.h">
+      <Filter>Header Files\combat</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

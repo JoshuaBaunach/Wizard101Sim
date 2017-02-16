@@ -8,8 +8,11 @@
 class Player
 {
 public:
-	// Constructor with level and school
+	// Constructor with level and school (is_ai will be false)
 	Player(int lv, int sch);
+
+	// Constructor with level, school, and AI type (is_ai will be true)
+	// Player(int lv, int sch, int ai_id)
 
 	// Shuffle the deck of cards
 	void shuffle();
@@ -20,11 +23,33 @@ public:
 	// Initialize the player for the beginning of a game
 	void init_player();
 
+	// Called by a combat instance. Determines the move the player will make during that particular round.
+	void make_move();
+
+	// Called when the player casts a spell
+	void cast_spell(int index, Player* target);
+
+	// Called when the player takes damage
+	void take_damage(int amount);
 
 	// Getters
 	vector<Spell> get_hand();
+	stack<Spell> get_discard();
+	stack<Spell> get_permanant_discard();
+	vector<Spell> get_shuffle_buffer();
+	bool get_is_ai();
+	int get_level();
+	int get_max_hp();
+	int get_hp();
+	int get_max_mana();
+	int get_mana();
+	int get_school();
+	int get_action();
+	int get_action_target();
+
 private:
-	int level, hp, mana, school;
+	int level, max_hp, hp, max_mana, mana, school, action, action_target;
+	bool is_ai;
 	stack<Spell> deck; // Deck of non-drawn cards
 	stack<Spell> discard; // Discard pile; may be reshuffled back into deck
 	stack<Spell> permanant_discard; // Discard stack for treasure cards and reshuffle cards
@@ -34,5 +59,7 @@ private:
 	// Determine HP and Mana from level table
 	void set_hp_mana();
 
+	// Generates a random number from a to b, inclusive
+	int generate_random(int a, int b);
 	// TODO: Incorporate treasure cards
 };
