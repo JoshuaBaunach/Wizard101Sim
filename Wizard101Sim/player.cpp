@@ -57,6 +57,11 @@ void Player::add_to_deck(Spell card)
 	deck.push(card);
 }
 
+void Player::add_to_deck(vector<Spell> card)
+{
+	for (size_t i = 0; i < card.size(); i++) deck.push(card[i]);
+}
+
 void Player::init_player()
 {
 	// Shuffle the deck
@@ -81,13 +86,23 @@ void Player::init_player()
 	}
 }
 
+void Player::set_action(int act)
+{
+	action = act;
+}
+
+void Player::set_action_target(Player* act_target)
+{
+	action_target = act_target;
+}
+
 void Player::make_move()
 {
 	if (action == -1) // If the player is passing this round
 		return;
 
 	// Otherwise, the player is casting a spell
-	// cast_spell(action, Player at action_target);
+	cast_spell(action, action_target);
 }
 
 void Player::cast_spell(int index, Player* target)
@@ -110,8 +125,6 @@ void Player::cast_spell(int index, Player* target)
 		switch (effect_type)
 		{
 		case 1: // Damage on single target
-			// rerorerorerorerorerorerorerorerorerorerorerorerorerorerorerorerorerorerorerorerorerorerorerorerorero
-			// Do not ask what the above comment is. I was bored. I am leaving it in.
 			vector<int> accuracies;
 			accuracies.push_back(effect_values[effect_values[1]+2]);
 			for (int i = 3 + effect_values[1]; i < 2 * effect_values[1] + 2; i++) accuracies.push_back(accuracies[accuracies.size()-1]+effect_values[i]);
@@ -128,7 +141,9 @@ void Player::cast_spell(int index, Player* target)
 			// Calculate bonuses
 			int damage_total = effect_values[2 + damage_index];
 
+			cout << "Dealt " << to_string(damage_total) << " damage" << endl;
 			target->take_damage(damage_total);
+			cout << "Target is now at " << to_string(target->get_hp()) << "/" << to_string(target->get_max_hp()) << " HP" << endl;
 		}
 	}
 }
@@ -146,6 +161,7 @@ vector<Spell> Player::get_hand() { return hand; }
 stack<Spell> Player::get_discard() { return discard; }
 stack<Spell> Player::get_permanant_discard() { return permanant_discard; }
 vector<Spell> Player::get_shuffle_buffer() { return shuffle_buffer; }
+Player* Player::get_action_target() { return action_target; }
 bool Player::get_is_ai() { return is_ai; }
 int Player::get_level() { return level; }
 int Player::get_max_hp() { return max_hp; }
@@ -154,7 +170,6 @@ int Player::get_max_mana() { return max_mana; }
 int Player::get_mana() { return mana; }
 int Player::get_school() { return school; }
 int Player::get_action() { return action; }
-int Player::get_action_target() { return action_target; }
 
 void Player::set_hp_mana()
 {

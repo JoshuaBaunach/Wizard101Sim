@@ -62,7 +62,7 @@ int Menu::disp_menu()
 {
 	int user_response;
 
-	Console_Helper::clear_screen();
+	// Console_Helper::clear_screen();
 
 	// Print the title in a fancy box
 	cout << "====";

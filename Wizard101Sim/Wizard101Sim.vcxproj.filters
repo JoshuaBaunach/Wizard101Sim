@@ -70,7 +70,7 @@
       <Filter>Source Files\spell</Filter>
     </ClCompile>
     <ClCompile Include="combat_instance.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\combat</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
