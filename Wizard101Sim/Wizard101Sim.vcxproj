@@ -112,25 +112,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="combat_instance.cpp" />
-    <ClCompile Include="console_helper.cpp" />
-    <ClCompile Include="constants.cpp" />
+    <ClCompile Include="Combat\combat_instance.cpp" />
+    <ClCompile Include="Helpers\console_helper.cpp" />
+    <ClCompile Include="Helpers\constants.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="menu.cpp" />
-    <ClCompile Include="player.cpp" />
-    <ClCompile Include="spell.cpp" />
-    <ClCompile Include="spell_effect.cpp" />
-    <ClCompile Include="spell_file_parser.cpp" />
+    <ClCompile Include="Menu\menu.cpp" />
+    <ClCompile Include="player\player.cpp" />
+    <ClCompile Include="Spell\spell.cpp" />
+    <ClCompile Include="Spell\spell_effect.cpp" />
+    <ClCompile Include="Spell\spell_file_parser.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="combat_instance.h" />
-    <ClInclude Include="console_helper.h" />
-    <ClInclude Include="constants.h" />
-    <ClInclude Include="menu.h" />
-    <ClInclude Include="player.h" />
-    <ClInclude Include="spell.h" />
-    <ClInclude Include="spell_effect.h" />
-    <ClInclude Include="spell_file_parser.h" />
+    <ClInclude Include="Combat\combat_instance.h" />
+    <ClInclude Include="Helpers\console_helper.h" />
+    <ClInclude Include="Helpers\constants.h" />
+    <ClInclude Include="Menu\menu.h" />
+    <ClInclude Include="player\player.h" />
+    <ClInclude Include="Spell\spell.h" />
+    <ClInclude Include="Spell\spell_effect.h" />
+    <ClInclude Include="Spell\spell_file_parser.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

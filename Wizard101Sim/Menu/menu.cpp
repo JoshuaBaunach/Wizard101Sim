@@ -1,5 +1,5 @@
 #include "menu.h"
-#include "console_helper.h"
+#include "../../Wizard101Sim/Helpers/console_helper.h"
 #include <iostream>
 #include <string>
 

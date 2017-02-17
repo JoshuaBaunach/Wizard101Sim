@@ -1,13 +1,4 @@
 #include "player.h"
-#include "constants.h"
-
-#include <fstream>
-#include <string>
-#include <iostream>
-#include <stack>
-#include <vector>
-// #include <time.h>
-#include <random>
 
 using namespace std;
 

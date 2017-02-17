@@ -1,5 +1,5 @@
-#include "spell_file_parser.h"
-#include "combat_instance.h"
+#include "../Wizard101Sim/Spell/spell_file_parser.h"
+#include "../Wizard101Sim/Combat/combat_instance.h"
 
 #include <iostream>
 #include <string>

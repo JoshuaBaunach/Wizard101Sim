@@ -48,55 +48,55 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="menu.cpp">
-      <Filter>Source Files\menu</Filter>
-    </ClCompile>
-    <ClCompile Include="console_helper.cpp">
-      <Filter>Source Files\helpers</Filter>
-    </ClCompile>
-    <ClCompile Include="spell_effect.cpp">
-      <Filter>Source Files\spell</Filter>
-    </ClCompile>
-    <ClCompile Include="spell.cpp">
-      <Filter>Source Files\spell</Filter>
-    </ClCompile>
-    <ClCompile Include="player.cpp">
+    <ClCompile Include="player\player.cpp">
       <Filter>Source Files\player</Filter>
     </ClCompile>
-    <ClCompile Include="constants.cpp">
+    <ClCompile Include="Combat\combat_instance.cpp">
+      <Filter>Source Files\combat</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\console_helper.cpp">
       <Filter>Source Files\helpers</Filter>
     </ClCompile>
-    <ClCompile Include="spell_file_parser.cpp">
+    <ClCompile Include="Helpers\constants.cpp">
+      <Filter>Source Files\helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu\menu.cpp">
+      <Filter>Source Files\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Spell\spell.cpp">
       <Filter>Source Files\spell</Filter>
     </ClCompile>
-    <ClCompile Include="combat_instance.cpp">
-      <Filter>Source Files\combat</Filter>
+    <ClCompile Include="Spell\spell_effect.cpp">
+      <Filter>Source Files\spell</Filter>
+    </ClCompile>
+    <ClCompile Include="Spell\spell_file_parser.cpp">
+      <Filter>Source Files\spell</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="menu.h">
-      <Filter>Header Files\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="console_helper.h">
-      <Filter>Header Files\helpers</Filter>
-    </ClInclude>
-    <ClInclude Include="spell.h">
-      <Filter>Header Files\spell</Filter>
-    </ClInclude>
-    <ClInclude Include="spell_effect.h">
-      <Filter>Header Files\spell</Filter>
-    </ClInclude>
-    <ClInclude Include="player.h">
+    <ClInclude Include="player\player.h">
       <Filter>Header Files\player</Filter>
     </ClInclude>
-    <ClInclude Include="constants.h">
+    <ClInclude Include="Combat\combat_instance.h">
+      <Filter>Header Files\combat</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\console_helper.h">
       <Filter>Header Files\helpers</Filter>
     </ClInclude>
-    <ClInclude Include="spell_file_parser.h">
+    <ClInclude Include="Helpers\constants.h">
+      <Filter>Header Files\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu\menu.h">
+      <Filter>Header Files\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Spell\spell.h">
       <Filter>Header Files\spell</Filter>
     </ClInclude>
-    <ClInclude Include="combat_instance.h">
-      <Filter>Header Files\combat</Filter>
+    <ClInclude Include="Spell\spell_effect.h">
+      <Filter>Header Files\spell</Filter>
+    </ClInclude>
+    <ClInclude Include="Spell\spell_file_parser.h">
+      <Filter>Header Files\spell</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

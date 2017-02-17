@@ -1,5 +1,5 @@
 #include "spell.h"
-#include "constants.h"
+#include "../../Wizard101Sim/Helpers/constants.h"
 
 #include <iostream>
 #include <vector>

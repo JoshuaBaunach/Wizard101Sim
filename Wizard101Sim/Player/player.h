@@ -1,9 +1,14 @@
 #pragma once
 
-#include "spell.h"
+#include "../../Wizard101Sim/Spell/spell.h"
+#include "../../Wizard101Sim/Helpers/constants.h"
 
+#include <fstream>
+#include <string>
+#include <iostream>
 #include <stack>
 #include <vector>
+#include <random>
 
 class Player
 {

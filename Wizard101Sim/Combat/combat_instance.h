@@ -1,8 +1,8 @@
 #pragma once
 
-#include "player.h"
-#include "menu.h"
-#include "constants.h"
+#include "../../Wizard101Sim/Player/player.h"
+#include "../../Wizard101Sim/Menu/menu.h"
+#include "../../Wizard101Sim/Helpers/constants.h"
 
 #include <vector>
 #include <iostream>
