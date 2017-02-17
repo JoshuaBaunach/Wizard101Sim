@@ -38,7 +38,7 @@ void Player::shuffle()
 	{
 		//srand((unsigned int)time(NULL));
 		int j = generate_random(0, i);
-		Spell temp = shuffle_buffer[i];
+		Spell* temp = shuffle_buffer[i];
 		shuffle_buffer[i] = shuffle_buffer[j];
 		shuffle_buffer[j] = temp;
 	}
@@ -54,12 +54,19 @@ void Player::shuffle()
 // Add a card to the deck
 void Player::add_to_deck(Spell card)
 {
-	deck.push(card);
+	Spell* to_push = new Spell(card);
+
+	deck.push(to_push);
 }
 
 void Player::add_to_deck(vector<Spell> card)
 {
-	for (size_t i = 0; i < card.size(); i++) deck.push(card[i]);
+	
+	for (size_t i = 0; i < card.size(); i++)
+	{
+		Spell* to_push = new Spell(card[i]);
+		deck.push(to_push);
+	}
 }
 
 void Player::init_player()
@@ -108,12 +115,33 @@ void Player::make_move()
 void Player::cast_spell(int index, Player* target)
 {
 	// Check whether the spell is cast via accuracy
-	Spell to_cast = hand[index];
-	vector<Spell_Effect> to_cast_effects = to_cast.get_effects();
+	Spell* to_cast = hand[index];
+	vector<Spell_Effect> to_cast_effects = to_cast->get_effects();
 	//srand((unsigned int)time(NULL));
-	if (generate_random(0,100) > to_cast.get_accuracy()) // Cast failed
+	if (generate_random(0,100) > to_cast->get_accuracy()) // Cast failed
 	{
 		cout << "Cast failed" << endl;
+
+		// Put spell at bottom of deck and get new card, if one is available
+		stack<Spell*> temp;
+		while (!deck.empty())
+		{
+			temp.push(deck.top());
+			deck.pop();
+		}
+		deck.push(hand[index]);
+		while (!temp.empty())
+		{
+			deck.push(temp.top());
+			temp.pop();
+		}
+		if (!deck.empty())
+		{
+			hand[index] = deck.top();
+			deck.pop();
+		}
+		else 
+			hand.erase(hand.begin() + index);
 		return;
 	}
 
@@ -146,6 +174,15 @@ void Player::cast_spell(int index, Player* target)
 			cout << "Target is now at " << to_string(target->get_hp()) << "/" << to_string(target->get_max_hp()) << " HP" << endl;
 		}
 	}
+	// Put card into discard and get a new card, if one is available
+	discard.push(hand[index]);
+	if (!deck.empty())
+	{
+		hand[index] = deck.top();
+		deck.pop();
+	}
+	else
+		hand.erase(hand.begin() + index);
 }
 
 void Player::take_damage(int amount)
@@ -157,10 +194,11 @@ void Player::take_damage(int amount)
 }
 
 // Here's a bunch of getter functions. Enjoy
-vector<Spell> Player::get_hand() { return hand; }
-stack<Spell> Player::get_discard() { return discard; }
-stack<Spell> Player::get_permanant_discard() { return permanant_discard; }
-vector<Spell> Player::get_shuffle_buffer() { return shuffle_buffer; }
+stack<Spell*> Player::get_deck() { return deck; }
+vector<Spell*> Player::get_hand() { return hand; }
+stack<Spell*> Player::get_discard() { return discard; }
+stack<Spell*> Player::get_permanant_discard() { return permanant_discard; }
+vector<Spell*> Player::get_shuffle_buffer() { return shuffle_buffer; }
 Player* Player::get_action_target() { return action_target; }
 bool Player::get_is_ai() { return is_ai; }
 int Player::get_level() { return level; }
@@ -170,6 +208,36 @@ int Player::get_max_mana() { return max_mana; }
 int Player::get_mana() { return mana; }
 int Player::get_school() { return school; }
 int Player::get_action() { return action; }
+
+Player::~Player()
+{
+	// Remove each of the spell pointers in any spell containers
+	while (!deck.empty())
+	{
+		delete deck.top();
+		deck.pop();
+	}
+	while (!discard.empty())
+	{
+		delete discard.top();
+		discard.pop();
+	}
+	while (!permanant_discard.empty())
+	{
+		delete permanant_discard.top();
+		permanant_discard.pop();
+	}
+	while (!shuffle_buffer.empty())
+	{
+		delete shuffle_buffer.back();
+		shuffle_buffer.pop_back();
+	}
+	while (!hand.empty())
+	{
+		delete hand.back();
+		hand.pop_back();
+	}
+}
 
 void Player::set_hp_mana()
 {

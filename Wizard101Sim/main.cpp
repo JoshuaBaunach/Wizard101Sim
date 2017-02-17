@@ -11,8 +11,8 @@ int main()
 {
 	// Get the file
 	string file_path,file_path_multiple;
-	file_path = "C:\\Users\\Joshua Baunach\\Documents\\Wizard101Sim\\spells\\single_spell.json";
-	file_path_multiple = "C:\\Users\\Joshua Baunach\\Documents\\Wizard101Sim\\spells\\multiple_spells.json";
+	file_path = "single_spell.json";
+	file_path_multiple = "multiple_spells.json";
 
 	// Let's parse this thing
 	Spell_File_Parser parser(file_path);
@@ -22,10 +22,10 @@ int main()
 
 	Player player1(1, 1);
 	Player player2(1, 2);
-	player1.add_to_deck(test_spell);
-	player1.add_to_deck(test_spells);
-	player2.add_to_deck(test_spell);
-	player2.add_to_deck(test_spells);
+	for (int i = 0; i < 3; i++) player1.add_to_deck(test_spell);
+	for (int i = 0; i < 3; i++) player1.add_to_deck(test_spells);
+	for (int i = 0; i < 3; i++) player2.add_to_deck(test_spell);
+	for (int i = 0; i < 3; i++) player2.add_to_deck(test_spells);
 	
 	Combat_Instance instance;
 	vector<Player*> team1, team2;

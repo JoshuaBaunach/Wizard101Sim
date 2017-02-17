@@ -12,6 +12,12 @@ public:
 	// Constructor
 	Spell(int spell_id, const char* spell_name, const char* spell_description, int spell_school, int spell_accuracy, int spell_pips, int spell_type, bool spell_shadow);
 
+	// Copy constructor
+	Spell(Spell* other);
+
+	// = Operator
+	Spell& operator=(const Spell other);
+
 	// Prints the details of the spell
 	void print_details();
 

@@ -78,7 +78,7 @@ void Combat_Instance::get_moves(vector<Player*> team, vector<Player*> opposing)
 	{
 		if (!team[i]->get_is_ai())
 		{
-			vector<Spell> player_hand = team[i]->get_hand();
+			vector<Spell*> player_hand = team[i]->get_hand();
 			Menu choice_menu;
 			choice_menu.set_title("Action for Player " + to_string(i+1));
 			choice_menu.set_blurb("Choose an action for player " + to_string(i+1) + " to perform");
@@ -87,8 +87,8 @@ void Combat_Instance::get_moves(vector<Player*> team, vector<Player*> opposing)
 			for (size_t j = 0; j < player_hand.size(); j++)
 			{
 				// Split into multiple lines so it does not look ugly
-				string name_and_description = player_hand[j].get_name() + ". " + player_hand[j].get_description();
-				string details = " (" + CONSTANTS::SCHOOL_NAMES[player_hand[j].get_school()] + ", " + to_string(player_hand[j].get_accuracy()) + "%)";
+				string name_and_description = player_hand[j]->get_name() + ". " + player_hand[j]->get_description();
+				string details = " (" + CONSTANTS::SCHOOL_NAMES[player_hand[j]->get_school()] + ", " + to_string(player_hand[j]->get_accuracy()) + "%)";
 				choice_menu.add_option(name_and_description + details);
 			}
 			choice_menu.add_option("Pass");
@@ -100,8 +100,8 @@ void Combat_Instance::get_moves(vector<Player*> team, vector<Player*> opposing)
 			{
 				int target_type = 1; // 0 = No target, 1 = Single enemy, 2 = Single ally
 				// Determine whether the player must select a target based on spell.
-				Spell selected_spell = player_hand[option - 1];
-				switch (selected_spell.get_type())
+				Spell* selected_spell = player_hand[option - 1];
+				switch (selected_spell->get_type())
 				{
 				case 1: // Single target damage
 					target_type = 1;
@@ -130,6 +130,7 @@ void Combat_Instance::get_moves(vector<Player*> team, vector<Player*> opposing)
 					}
 				}
 			}
+			else team[i]->set_action(-1);
 		}
 	}
 }

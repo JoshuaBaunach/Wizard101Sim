@@ -1,0 +1,36 @@
+{
+	"spells": [
+		{
+			"id": 2,
+			"name": "Thunder Snake",
+			"description": "105-145 Storm damage on single enemy",
+			"school": 2,
+			"accuracy": 70,
+			"pips": 1,
+			"type": 1,
+			"shadow": false,
+			"effects": [
+				{
+					"type": 1,
+					"values": [1, 3, 105, 125, 145, 33, 34, 33]
+				}
+			]
+		},
+		{
+			"id": 3,
+			"name": "Frost Beetle",
+			"description": "65-105 Ice damage on single enemy",
+			"school": 3,
+			"accuracy": 80,
+			"pips": 1,
+			"type": 1,
+			"shadow": false,
+			"effects": [
+				{
+					"type": 1,
+					"values": [1, 3, 65, 85, 105, 33, 34, 33]
+				}
+			]
+		}
+	]
+}

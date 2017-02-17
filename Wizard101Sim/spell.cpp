@@ -19,6 +19,36 @@ Spell::Spell(int spell_id, const char* spell_name, const char* spell_description
 	shadow = spell_shadow;
 }
 
+Spell::Spell(Spell * other)
+{
+	// Copy pretty much everything here
+	name = other->name;
+	description = other->description;
+	school = other->school;
+	accuracy = other->accuracy;
+	pips = other->pips;
+	type = other->type;
+	id = other->id;
+	shadow = other->shadow;
+	effects = other->effects;
+}
+
+Spell & Spell::operator=(const Spell other)
+{
+	// Copy pretty much everything here
+	name = other.name;
+	description = other.description;
+	school = other.school;
+	accuracy = other.accuracy;
+	pips = other.pips;
+	type = other.type;
+	id = other.id;
+	shadow = other.shadow;
+	effects = other.effects;
+
+	return *this;
+}
+
 void Spell::set_effects(vector<Spell_Effect> spell_effects)
 {
 	effects = spell_effects;
